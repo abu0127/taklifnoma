@@ -3,227 +3,549 @@
 
 <head>
    <meta charset="UTF-8">
-   <meta name="viewport"
-      content="width=device-width, initial-scale=1">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet" href="boot.css">
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"rel="stylesheet">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
    <style>
-   
-   *{
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-   }
-   
-      body{
+      * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+         user-select: none;
+      }
+
+      a {
+         text-decoration: none;
+         padding: 10px;
+         margin: 0;
+         width: inherit;
+         height: inherit;
+         color: white;
+      }
+
+      body {
+         height: 100vh;
          display: flex;
          justify-content: center;
          flex-flow: column;
          text-align: center;
-         padding: 5px;
+         /* background: url("pexels-ink-drop-118789-15387699.jpg");
+         background-position: center;
+         background-size: 1800px;
+         background-repeat: no-repeat; */
+         background-color: black;
       }
-      .colendar{
-         
-         width:300px;
+
+      .colendar {
+
+         width: 300px;
          height: 200px;
-         border: 1px solid #CACACA80;
+         /* border: 1px solid rgba(0, 0, 0, 0.2); */
          padding: 0 20px;
          border-radius: 10px;
-         background: #DBDBDB36;
+         background: #7e7e7e2f;
+         padding-top: 5px;
       }
-     
-      
-      h1{
-         color: #7F7F82;
+
+      h1 {
+         color: #dadada;
          text-align: center;
-         margin-top: 10px;
-         font-size:  18px;
+         margin-top: 0px;
+         font-size: 18px;
          font-weight: 700;
       }
-      .head-text{
+
+      .head-text {
          font-size: 27px;
       }
-      .col{
-         color: #7F7F82;
+
+      .col {
+         color: #8d8d8d;
          padding: 3px 0;
          text-align: center;
          font-weight: 700;
          font-size: 13px;
       }
-      header p{
-         color:#7F7F82;
+
+      header p {
+         color: #faf7d8;
       }
-      .day{
-         color: #404040;
+
+      .day {
+         color: #dadada;
          font-size: 9px;
          padding: .3rem 0;
       }
-      .Y {color: red;}
-      .op{opacity: 30%;}
-      .activ{
-         border-radius: 7px;
-         border: 1px solid  #3EAB85;
+
+      .Y {
+         color: red;
       }
-      
-      .day19{
+
+      .op {
+         opacity: 30%;
+      }
+
+      .activ {
+         border-radius: 7px;
+         border: 1px solid #a1a1a1;
+      }
+
+      .day19 {
+         position: relative;
          border-radius: 7px;
          animation: foo 2s infinite;
-         transition: all .6s ;
+         transition: all .6s;
          color: white;
-         background: #3EAB85;
+         background: #e2e2e273;
+         user-select: auto;
       }
-      @keyframes foo{
-         0%{box-shadow: 0px 0px 30px 5px #3EAB85;}
-         100%{box-shadow: 0px 0px 0px 0px #3EAB85;}
+
+      @keyframes foo {
+         0% {
+            box-shadow: 0px 0px 30px 5px #e2e2e2bb;
+         }
+
+         100% {
+            box-shadow: 0px 0px 0px 0px #e2e2e273;
+         }
 
       }
-      .map{
+
+      .text-container {
+         display: flex;
+         flex-flow: column;
+         justify-content: center;
+         width: 300px;
+         height: 200px;
+         border-radius: 10px;
+         transition: all .7s;
+         margin-top: 100px;
+         backdrop-filter: blur(5px);
+         background-color: #9b9a9a5d;
+         overflow: hidden;
+      }
+
+      .map {
          height: 200px;
          width: 300px;
          border-radius: 10px;
          overflow: hidden;
          border: 1px solid #CACACAC7;
+         outline: none;
+
       }
-      
-      .container-map{
+
+      .container-map {
          display: flex;
          justify-content: space-evenly;
          flex-flow: wrap;
-         padding: 10px;
-         gap: 15px;
          border-radius: 10px;
-         border: 1px solid #CACACA80
+         backdrop-filter: blur(5px);
+         overflow: hidden;
+         transition: all .7s;
+         height: 0;
+         margin-top: 100px;
+         padding: 15px 0;
+         background: #8d8d8d23;
       }
+
+
+
       .countdown {
-         width: 100%;
-         margin-top: 10px;
+         width: 300px;
          font-size: 15px;
-         
-}
-.border-count{
-   border-radius: 10px;
-   display: flex;
-   justify-content: center;
-   padding: 0px;
-   flex-wrap: wrap;
-}
 
-.time {
-    background: #DBDBDB36;
-    padding: 10px 20px;
-    border-radius: 10px;
-    margin: 2px;
-    border: 1px solid #CACACA80;
-}
+      }
 
-.container{
-   max-width: 395px;
-}
+      .border-count {
 
-.time span {
-    color:#7F7F82
-}
+         border-radius: 10px;
+         display: flex;
+         justify-content: space-between;
+         padding: 0px;
+      }
+
+      .time {
+         background: #7e7e7e2f;
+         ;
+         padding: 10px 20px;
+         border-radius: 10px;
+         margin: 3px;
+         color: #dadada;
+      }
+
+      .container {
+         height: 100vh;
+         display: flex;
+         align-items: center;
+         max-width: 350px;
+         flex-direction: column;
+      }
+
       
-   </style>
-   
-   <title></title>
-</head>
-<body>
-   <div class="container">
-      
-   
-      
-   
- <div class="container-map">
 
-      <header>
-        <h1 class="head-text">Hurmatli mehmonlar!</h1>
-        <p>Sizni <b>Nodirbek</b> nikoh to'yining faxriy mehmoni bo'lishga taklif qilamiz.
-        Qalblar ezguliklarga to‘la bo‘lgan ushbu qutlug‘ kunda do‘stlar yonida bo‘ling!</p>
-       </header>
-      <h1>Marosim sanasi va manzili</h1>
-    <div class="colendar" >
-   <h1>Oktiyabr</h1>
-   <div class="row " >
-     <div class="col Y">Y</div>
-     <div class="col">D</div>
-     <div class="col">S</div>
-     <div class="col">Ch</div>
-     <div class="col">P</div>
-     <div class="col">J</div>
-     <div class="col">Sh</div>
-   </div>
-   <div class="row ">
-     <div class="col day day29 Y op ">29</div>
-     <div class="col day day30 op">30</div>
-     <div class="col day day1 activ">1</div>
-     <div class="col day day2">2</div>
-     <div class="col day day3">3</div>
-     <div class="col day day4">4</div>
-     <div class="col day day5">5</div>
-   </div>
-   <div class="row ">
-     <div class="col day day6 Y">6</div>
-     <div class="col day day7">7</div>
-     <div class="col day day8">8</div>
-     <div class="col day day9">9</div>
-     <div class="col day day10">10</div>
-     <div class="col day day11">11</div>
-     <div class="col day day12">12</div>
-   </div>
-   <div class="row ">
-      <div class="col day day13 Y">13</div>
-      <div class="col day day14">14</div>
-      <div class="col day day15">15</div>
-      <div class="col day day16">16</div>
-      <div class="col day day17">17</div>
-      <div class="col day day18">18</div>
-      <div class="col day day19">19</div>
-   </div>
-   <div class="row ">
-      <div class="col day day20 Y">20</div>
-      <div class="col day day21">21</div>
-      <div class="col day day22">22</div>
-      <div class="col day day23">23</div>
-      <div class="col day day24">24</div>
-      <div class="col day day25">25</div>
-      <div class="col day day26">26</div>
-   </div>
-   <div class="row ">
-      <div class="col day day27 Y">27</div>
-      <div class="col day day28">28</div>
-      <div class="col day day29">29</div>
-      <div class="col day day30">30</div>
-      <div class="col day day31">31</div>
-      <div class="col day day1 op">1</div>
-      <div class="col day day2 op">2</div>
-   </div>
+      .itop {
+         transform: rotate(225deg);
+      }
 
-   </div>
-    
-    <div class="map">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3032.4034945786098!2d70.93010560000003!3d40.53267390000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38baefecb62ddf59%3A0x48923251ef2a7fc5!2sMoida2%20Kokand!5e0!3m2!1sen!2s!4v1725555699989!5m2!1sen!2s" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-    <h1>Marosimgacha qolgan vaqt</h1>
-     <div class="countdown">
-    <div class="border-count">
-       <div id="days" class="time">00 <span>kun</span></div>
-        <div id="hours" class="time">00 <span>soat</span></div>
-        <div id="minutes" class="time">00 <span>daqiqa</span></div>
+      .idow {
+         transform: rotate(43deg);
+
+      }
+
+      .slowDown {
+         animation: sowDown 1s infinite;
+      }
+
+      @keyframes sowDown {
+         0% {
+            margin-top: 0px;
+         }
+
+         50% {
+            margin-top: 20px;
+         }
+
+         100% {
+            margin-top: 0px;
+            ;
+         }
+      }
+
+      #icon {
+         position: relative;
+         width: 20px;
+         height: 20px;
+         border: 5px solid;
+         border-color: #faf7d8;
+         border-top: transparent;
+         border-left: transparent;
+         transition: all .7s;
+
+      }
+
+      .btn {
+         display: flex;
+         flex-flow: column;
+         align-items: center;
+         padding: 0;
+      }
+
+      .btn-text {
+         margin-top: 10px;
+      }
+
+
+
+      .header {
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100vw;
+         height: 55px;
+         background: #dadada3f;
+         backdrop-filter: blur(5px);
+         border-radius: 0 0 10px 10px;
+         margin: 0;
+         z-index: 100;
+         display: flex;
+         justify-content: space-between;
+      }
+.profil {
+         width: 40px;
+         height: 40px;
+         border-radius: 50%;
+         background: url(foo.jpg) ;
+         background-size: cover;
+         overflow: hidden;
+         margin: 6px 0 6px 20px;
+      }
+      .profil div{
+         position: relative;
+          top: 5px;
+         left: 5%;
         
-    </div>
+      }
+      #text {
+         font-size: 14px;
+         font-family: Arial, sans-serif;
+         background: #faf7d8;
+         display: inline-block;
+         overflow: hidden;
+         white-space: nowrap;
+         padding: 0 15px;
+         border-radius: 0 15px 15px 15px;
+         position: absolute;
+         z-index: 101;
+         display: inline;
+         top: 45px;
+         left: 59px;
+         backdrop-filter: blur(15px);
+         color: #404040;
+      }
+
+      /* Vertical line style */
+      #text::after {
+         content: '';
+         position: absolute;
+         right: 0;
+         top: 0;
+         bottom: 0;
+         color: black;
+         animation: blink 1s infinite;
+      }
+
+      /* Blink animation for the vertical line */
+      @keyframes blink {
+         0% {
+            opacity: 1;
+         }
+
+         50% {
+            opacity: 0;
+         }
+
+         100% {
+            opacity: 1;
+         }
+      }
+
+      .rocet {
+         position: fixed;
+         width: 100vw;
+         height: 100vh;
+         top: 0;
+         left: 0;
+         margin: 0;
+         padding: 0;
+
+      }
+
+      .rocet-style {
+         body {
+            margin: 0;
+            overflow: hidden;
+            background-color: black;
+            font-family: Arial, sans-serif;
+         }
+
+         canvas {
+            display: block;
+         }
+
+         /* Ortadaki yazı */
+         .centered-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #D2D2D2;
+            font-size: 1.7rem;
+            text-align: center;
+            z-index: 10;
+            /* Yıldızlar ve havai fişeklerin üzerinde kalacak */
+         }
+
+         /* Ay */
+         .moon {
+            position: absolute;
+            top: 10%;
+            right: 5%;
+            width: 150px;
+            height: 150px;
+            background-color: #fdfdfd;
+            border-radius: 50%;
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+         }
+
+         /* Göz kırpma efekti */
+         .flash {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            opacity: 0;
+            z-index: 9;
+            /* Yıldızların ve yazının üzerinde olacak */
+            transition: opacity 0.1s ease-out;
+            /* Hızlı bir geçiş */
+         }
+      }
+
+      .onblur {
+         backdrop-filter: blur(5px);
+      }
+
+      .blur1 {
+         position: fixed;
+         width: 100vw;
+         height: 100vh;
+         z-index: 200;
+         top: 0;
+         left: 0;
+
+         display: flex;
+         align-items: center;
+         justify-content: center;
+      }
+
+      .img1 {
+         position: fixed;
+         width: 200px;
+         height: 300px;
+         background: #eb2323;
+         border-radius: 10px;
+         background: url();
+         z-index: 250;
+         transition: all .7s;
+         overflow: hidden;
+      }
+      .hour{
+         font-size: 18px;
+          color: #dadada;
+          margin: 13px 20px;
+      }
+
+
+      .hide {
+         display: none;
+      }
+   </style>
+
+   <title>Taklifnoma</title>
+</head>
+
+<body>
+
+
+   <div class="rocet rocet-style">
+      <canvas id="fireworksCanvas"></canvas>
+
+      <!-- Ortada gösterilecek yazı -->
+      <div class="centered-text">
+
+      </div>
+      <!-- Parlayan ay -->
+      <!-- Göz kırpma efekti için div -->
+      <div id="flashEffect" class="flash"></div>
+
+      <audio autoplay loop>
+         <source src="rocet.mp3" type="audio/mpeg">
+      </audio>
+
    </div>
 
-   </div>  
-    
+   <div class="blur1 hide ">
+      <div class="img1">cftry7</div>
+   </div>
 
- 
-    <audio autoplay loop>
-        <source src="audio.mp3" type="audio/mpeg">
-    </audio>
-    
-    
-    </div>
-    <script src="script.js"></script>
+   <div class="header">
+      <div>
+         <div class="profil"></div>
+         <div id="text"></div>
+      </div>
+      <div class="hour">00</div>
+   </div>
+
+   <div class="container">
+      <header class="text-container">
+         <h1 class="head-text">Hurmatli mehmonlar!</h1>
+         <p>Sizni <b>Nodirbek</b> nikoh to'yining faxriy mehmoni bo'lishga taklif qilamiz.
+            Qalblar ezguliklarga to‘la bo‘lgan ushbu qutlug‘ kunda do‘stlar yonida bo‘ling!</p>
+      </header>
+      <div class="container-map hide ">
+
+
+
+         <div class="colendar">
+            <h1>Oktiyabr</h1>
+            <div class="row ">
+               <div class="col Y">Y</div>
+               <div class="col">D</div>
+               <div class="col">S</div>
+               <div class="col">Ch</div>
+               <div class="col">P</div>
+               <div class="col">J</div>
+               <div class="col">Sh</div>
+            </div>
+            <div class="row ">
+               <div id="29" class="col day day29 Y op ">29</div>
+               <div id="30" class="col day day30 op">30</div>
+               <div id="1" class="col day day1 ">1</div>
+               <div id="2" class="col day day2 activ">2</div>
+               <div id="3" class="col day day3">3</div>
+               <div id="4" class="col day day4">4</div>
+               <div id="5" class="col day day5">5</div>
+            </div>
+            <div class="row ">
+               <div id="6" class="col day day6 Y">6</div>
+               <div id="7" class="col day day7">7</div>
+               <div id="8" class="col day day8">8</div>
+               <div id="9" class="col day day9">9</div>
+               <div id="10" class="col day day10">10</div>
+               <div id="11" class="col day day11">11</div>
+               <div id="12" class="col day day12">12</div>
+            </div>
+            <div class="row ">
+
+               <div id="13" class="col day day13 Y">13</div>
+               <div id="14" class="col day day14">14</div>
+               <div id="15" class="col day day15">15</div>
+               <div id="16" class="col day day16">16</div>
+               <div id="17" class="col day day17">17</div>
+               <div id="18" class="col day day18">18</div>
+
+               <div id="19" class="col day day19">
+                  <div id="text1"></div>
+                  <a href="./rocet/rocet.html">19 </a>
+               </div>
+
+            </div>
+            <div class="row ">
+               <div id="20" class="col day day20 Y">20</div>
+               <div id="21" class="col day day21">21</div>
+               <div id="22" class="col day day22">22</div>
+               <div id="23" class="col day day23">23</div>
+               <div id="24" class="col day day24">24</div>
+               <div id="25" class="col day day25">25</div>
+               <div id="26" class="col day day26">26</div>
+            </div>
+            <div class="row ">
+               <div id="27" class="col day day27 Y">27</div>
+               <div id="28" class="col day day28">28</div>
+               <div id="29" class="col day day29">29</div>
+               <div id="30" class="col day day30">30</div>
+               <div id="31" class="col day day31">31</div>
+               <div class="col day day1 op">1</div>
+               <div class="col day day2 op">2</div>
+            </div>
+         </div>
+         <div class="map">
+            <iframe
+               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3032.4034945786098!2d70.93010560000003!3d40.53267390000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38baefecb62ddf59%3A0x48923251ef2a7fc5!2sMoida2%20Kokand!5e0!3m2!1sen!2s!4v1725555699989!5m2!1sen!2s"
+               width="305" height="205" allowfullscreen="" loading="lazy"
+               referrerpolicy="no-referrer-when-downgrade"></iframe>
+         </div>
+
+         <div class="countdown">
+            <h1>Marosimgacha qolgan vaqt</h1>
+            <div class="border-count">
+               <div id="days" class="time">00 <span>kun</span></div>
+               <div id="hours" class="time">00 <span>soat</span></div>
+               <div id="minutes" class="time">00 <span>daqiqa</span></div>
+            </div>
+         </div>
+
+      </div>
+
+      <div class="btn">
+         <h1 class="btn-text">Marosim sanasi va manzili</h1>
+         <div id="icon" class=" idow"></div>
+      </div>
+   </div>
+   <script src="script.js"></script>
 </body>
+
 </html>
