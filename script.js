@@ -35,11 +35,25 @@ const containerMap  = document.querySelector('.container-map ')
 const profil = document.querySelector('.profil')
 const blur1 = document.querySelector('.blur1')
 const body = document.querySelector('body')
-const hour = date.getHours().toString().padStart(2,'0');
-const minut = date.getMinutes().toString().padStart(2,'0');
-const headerHour = document.querySelector('.hour')
 
-headerHour.textContent = `${hour} : ${minut}`
+const headerHour = document.querySelector('.hour')
+function timecontrol(){
+  function addZero(i) {
+    if (i < 10) {i = "0" + i}
+    return i;
+  }
+
+  let date = new Date();  // Eksik olan tarih objesini ekledik
+  let h = addZero(date.getHours());
+  let m = addZero(date.getMinutes());
+  let s = addZero(date.getSeconds());
+  let time = h + ":" + m + ":" + s;
+  return time;
+}
+
+setInterval(() => {
+  headerHour.innerHTML =  timecontrol();
+}, 1000);
 
 
 // blur1.addEventListener('click',()=> {
